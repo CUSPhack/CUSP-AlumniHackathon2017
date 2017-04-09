@@ -53,9 +53,7 @@ for i in pages_range:
     rows = soup.find('table').find_all('tr')
     for row in rows[1:]:
         cols = row.find_all('td')
-        content = []
-        for ele in cols:
-            content.append(ele.text.strip())
+        content = [ele.text.strip() for ele in cols]
         if not str(content[2]) in id_exist:
             append.append(content)
         else:
